@@ -1,8 +1,14 @@
-<?php include_once "../include/header.php" ?>
+<?php 
+include_once "../include/header.php";
+require_once "../server.php";
+require_once "../include/classes/Pays.php";
+?>
 
 
 <section id="results">
-    
+
+
+
 </section>
 
 
