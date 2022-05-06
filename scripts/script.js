@@ -11,8 +11,7 @@ fields.forEach(function(field) {
     input.addEventListener('focus', function() {
         
         input.addEventListener('keyup', function() {
-            // récupération de la valeur de la barre de recherche
-            console.log(input.value);
+            // code ici
         });
     });
 
