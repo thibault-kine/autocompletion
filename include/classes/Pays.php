@@ -2,58 +2,50 @@
 
 class Pays {
 
-    private int $id;
-    public string $nom;
-    public string $continent;
-    public string $region;
-    public string $capitale;
-
-
-    public function __construct() {
-
-    }
-
-
-
-    public function searchAll() {
+    public static function searchAll() {
         $connexion = mysqli_connect("localhost", "root", "", "autocompletion");
         $sql = mysqli_query($connexion, "SELECT * FROM pays");
         $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
-        return $result;
+        file_put_contents('../results.json', json_encode($result));
     }
 
-    public function searchByID($id) {
+    public static function searchByID($id) {
         $connexion = mysqli_connect("localhost", "root", "", "autocompletion");
         $sql = mysqli_query($connexion, "SELECT * FROM pays WHERE id = $id");
         $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
-        return $result;
+        
+        file_put_contents('../results.json', json_encode($result));
     }
 
-    public function searchByName($name) {
+    public static function searchByName($name) {
         $connexion = mysqli_connect("localhost", "root", "", "autocompletion");
-        $sql = mysqli_query($connexion, "SELECT * FROM pays WHERE nom LIKE '%$name%'");
+        $sql = mysqli_query($connexion, "SELECT * FROM pays WHERE nom LIKE '$name%'");
         $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
-        return $result;
+        
+        file_put_contents('../results.json', json_encode($result));
     }
 
-    public function searchByContinent($continent) {
+    public static function searchByContinent($continent) {
         $connexion = mysqli_connect("localhost", "root", "", "autocompletion");
-        $sql = mysqli_query($connexion, "SELECT * FROM pays WHERE continent LIKE '%$continent%'");
+        $sql = mysqli_query($connexion, "SELECT * FROM pays WHERE continent LIKE '$continent%'");
         $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
-        return $result;
+        
+        file_put_contents('../results.json', json_encode($result));
     }
 
-    public function searchByRegion($region) {
+    public static function searchByRegion($region) {
         $connexion = mysqli_connect("localhost", "root", "", "autocompletion");
-        $sql = mysqli_query($connexion, "SELECT * FROM pays WHERE region LIKE '%$region%'");
+        $sql = mysqli_query($connexion, "SELECT * FROM pays WHERE region LIKE '$region%'");
         $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
-        return $result;
+        
+        file_put_contents('../results.json', json_encode($result));
     }
 
-    public function searchByCapitale($capitale) {
+    public static function searchByCapitale($capitale) {
         $connexion = mysqli_connect("localhost", "root", "", "autocompletion");
-        $sql = mysqli_query($connexion, "SELECT * FROM pays WHERE capitale LIKE '%$capitale%'");
+        $sql = mysqli_query($connexion, "SELECT * FROM pays WHERE capitale LIKE '$capitale%'");
         $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
-        return $result;
+        
+        file_put_contents('../results.json', json_encode($result));
     }
 }

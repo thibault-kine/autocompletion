@@ -15,9 +15,20 @@
 <body>
 
 <header>
+    <a href="index.php">
+        <img class="logo-small" src="../style/img/logo.png" alt="Find the World!">
+    </a>
+
     <form action="recherche.php" method="get" class="search-form">
+        <select name="search-by" class="search-by btn">
+            <option value="country">Pays</option>
+            <option value="capitale">Capitale</option>
+            <option value="continent">Continent</option>
+            <option value="region">Région</option>
+        </select>
+
         <div class="field">
-            <input type="text" name="search" class="search-bar" placeholder="Cherchez un pays">
+            <input type="text" name="search" class="search-bar" placeholder="Cherchez un pays" autocomplete="off">
             <button type="button" class="btn reset-btn"></button>
         </div>
 

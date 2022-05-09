@@ -107,6 +107,13 @@ main {
     margin-bottom: 5vh;
 }
 
+.logo-small {
+    display: block;
+    width: 5vw;
+    height: auto;
+    margin: auto 50%;
+}
+
 .search-btn {
     background-image: url("img/icons/search.png");
 }
@@ -120,6 +127,10 @@ main {
     cursor: pointer;
 }
 
+.search-by.btn:hover {
+    background-color: var(--standard-gray);
+}
+
 .field {
     display: flex;
     flex-direction: row;
@@ -129,4 +140,39 @@ main {
 .err-msg {
     color: var(--danger-red);
     text-align: center;
+}
+
+.search-by {
+    width: 20%;
+    padding-left: 1em;
+}
+
+#results {
+    width: 100vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    border: 1px solid red;
+    border-radius: 1.5em;
+    text-align: center;
+    width: 60vw;
+    margin: 2em auto;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.card * {
+    flex-direction: row;
+}
+
+.icon {
+    width: 1em;
+    height: auto;
+    margin: 0 0.5em;
+    align-self: baseline;
 }
