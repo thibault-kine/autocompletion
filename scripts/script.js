@@ -17,10 +17,16 @@ fields.forEach(function(field) {
             input.value = searchValue;
         });
 
-        field.addEventListener('keyup', function(e) {
-            if(e.keyCode == 13) {
-                searchBtn.click();
-            }
+        input.addEventListener('keyup', function() {
+
+            const suggestions = field.querySelector('.suggestions ul');
+
+            fetch('../results.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => console.error(error));
         });
     }
 
@@ -33,22 +39,21 @@ fields.forEach(function(field) {
 
 // GESTION DE LA RECHERCHE
 
-const resultsDiv = document.getElementById('results');
+let resultsDiv = document.querySelector('#results');
 
 fetch('../results.json')
 .then((res) => res.json())
 .then(function(data) {
-
-    console.log(data);
 
     data.forEach(function(result) {
 
         let card = document.createElement('div');
         card.className = 'card';
 
-        let nomImg = document.createElement('img');
-        nomImg.src = "../style/img/icons/pin.png";
-        nomImg.className = 'icon';
+        let flag = document.createElement('img');
+        flag.src = "../style/img/flags/" + result.imgDir + ".png";
+        flag.className = 'flag';
+
         let nom = document.createElement('h1');
         nom.className = 'country-name';
         nom.innerHTML = result.nom;
@@ -74,13 +79,13 @@ fetch('../results.json')
         region.className = 'country-region';
         region.innerHTML = result.region;
 
-        nom.prepend(nomImg);
+
         capitale.prepend(capitalImg);
         continent.prepend(continentImg);
         region.prepend(regionImg);
-        card.append(nom, capitale, continent, region);
+        card.append(flag, nom, capitale, continent, region);
 
-        results.append(card);
+        resultsDiv.append(card);
     });
 })
 .catch((err) => console.log(err));

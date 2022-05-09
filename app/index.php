@@ -15,11 +15,9 @@
     </select>
 
     <div class="field">
-        <div class="search-container">
-            <input type="text" name="search" class="search-bar" placeholder="Cherchez un pays" autocomplete="off">
-            <div class="suggestions">
-                <ul></ul>
-            </div>
+        <input type="text" name="search" class="search-bar" placeholder="Cherchez un pays" autocomplete="off">
+        <div class="suggestions">
+            <ul></ul>
         </div>
         <button type="button" class="btn reset-btn"></button>
     </div>
@@ -28,8 +26,10 @@
 </form>
 <h1 class="err-msg"></h1>
 
-<button type="button" class="btn" id="debug">Debug</button>
-
 </section>
 
-<?php include_once "../include/footer.php" ?>
+<?php 
+include_once "../include/footer.php" ;
+include_once "../include/classes/Pays.php";
+$_POST['all'] = Pays::searchAll();
+?>
