@@ -12,6 +12,7 @@
     <!-- SCRIPTS -->
     <script src="../scripts/script.js"></script>
     <script src="../scripts/autocompletion.js"></script>
+    <script src="../scripts/element.js"></script>
 </head>
 <body>
 
@@ -30,6 +31,9 @@
 
         <div class="field">
             <input type="text" name="search" class="search-bar" placeholder="Cherchez un pays" autocomplete="off">
+            <div class="suggestions">
+                <ul></ul>
+            </div>
             <button type="button" class="btn reset-btn"></button>
         </div>
 

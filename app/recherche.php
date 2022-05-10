@@ -28,6 +28,7 @@ switch($_GET["search-by"]) {
         Pays::searchAll();
         break;
 }
+
 ?>
 
 </section>

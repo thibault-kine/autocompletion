@@ -59,6 +59,7 @@ main {
 }
 
 .search-bar {
+    position: relative;
     display: block;
     margin: 1%;
     box-sizing: border-box;
@@ -172,6 +173,11 @@ main {
     box-shadow: var(--field-shadow);
 }
 
+.card:hover {
+    background-color: var(--standard-gray);
+    cursor: pointer;
+}
+
 .icon {
     width: 1.5em;
     height: auto;
@@ -191,7 +197,7 @@ main {
     z-index: 2;
     position: absolute;
     width: fit-content;
-    bottom: 0;
+    /* bottom: 0px; */
     background-color: white;
     box-shadow: var(--field-shadow);
 }
@@ -207,4 +213,10 @@ li {
 
 li:hover {
     background-color: var(--lighter-standard-blue);
+}
+
+.no-results {
+    color: var(--danger-red);
+    text-align: center;
+    font-size: 3em;
 }
