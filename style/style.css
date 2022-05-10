@@ -150,11 +150,12 @@ main {
 }
 
 #results {
-    width: 80vw;
+    width: 90vw;
     margin: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card {
@@ -184,4 +185,26 @@ main {
     height: auto;
     margin-bottom: 1em;
     border-radius: 1.5em;
+}
+
+.suggestions {
+    z-index: 2;
+    position: absolute;
+    width: fit-content;
+    bottom: 0;
+    background-color: white;
+    box-shadow: var(--field-shadow);
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding: 0.25em 1em;
+    user-select: none;
+}
+
+li:hover {
+    background-color: var(--lighter-standard-blue);
 }

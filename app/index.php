@@ -1,4 +1,9 @@
-<?php include_once "../include/header.php" ?>
+<?php 
+include_once "../include/header.php";
+include_once "../include/classes/Pays.php";
+
+Pays::getAllData();
+?>
 
 <section id="search-engine">
 
@@ -15,10 +20,10 @@
     </select>
 
     <div class="field">
-        <input type="text" name="search" class="search-bar" placeholder="Cherchez un pays" autocomplete="off">
-        <div class="suggestions">
-            <ul></ul>
-        </div>
+            <input type="text" name="search" class="search-bar" placeholder="Cherchez un pays" autocomplete="off">
+            <div class="suggestions">
+                <ul></ul>
+            </div>
         <button type="button" class="btn reset-btn"></button>
     </div>
     

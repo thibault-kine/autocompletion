@@ -11,6 +11,7 @@
     
     <!-- SCRIPTS -->
     <script src="../scripts/script.js"></script>
+    <script src="../scripts/autocompletion.js"></script>
 </head>
 <body>
 

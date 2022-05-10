@@ -48,4 +48,12 @@ class Pays {
         
         file_put_contents('../results.json', json_encode($result));
     }
+
+    public static function getAllData() {
+        $connexion = mysqli_connect("localhost", "root", "", "autocompletion");
+        $sql =  mysqli_query($connexion, "SELECT * FROM pays");
+        $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
+
+        file_put_contents('../data.json', json_encode($result));
+    }
 }
