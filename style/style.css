@@ -159,6 +159,15 @@ main {
     justify-content: center;
 }
 
+#result {
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .card {
     border-radius: 1.5em;
     text-align: center;
@@ -219,4 +228,15 @@ li:hover {
     color: var(--danger-red);
     text-align: center;
     font-size: 3em;
+}
+
+.card a {
+    border: 3px solid;
+    border-color: var(--darker-standard-gray);
+    background-color: var(--darker-standard-gray);
+    padding: 5px;
+    border-radius: 1em;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }

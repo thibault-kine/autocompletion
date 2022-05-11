@@ -72,8 +72,6 @@ fields.forEach(field => {
             input.addEventListener('keyup', searchHandler);
             suggestions.addEventListener('click', useSuggestion);
         });
-    })
-    .catch(function(error) { console.log(error); });
-
+    });
 
 })

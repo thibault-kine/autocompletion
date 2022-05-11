@@ -29,7 +29,7 @@ fields.forEach(function(field) {
 
 const resultsDiv = document.querySelector('#results');
 
-if(document.href.includes('element.php')) {
+if(window.location.href.includes('search')) {
 
     fetch('../results.json')
     .then((res) => res.json())

@@ -5,7 +5,7 @@ include_once "../include/classes/Pays.php";
 Pays::searchByID($_GET['id']);
 ?>
 
-<div id="results">
+<div id="result">
 
 
 
